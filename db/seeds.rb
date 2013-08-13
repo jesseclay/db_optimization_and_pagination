@@ -31,6 +31,7 @@ fields = [:user_id, :value, :label, :created_at, :updated_at]
 TOTAL_KARMA.times.each_slice(SLICE_SIZE).each_with_index do |ids, index|
   data = ids.map do
     user_id = user_ids.sample
+    
     [user_id, rand(1..user_id), Faker::Lorem.word, now, now]
   end
 
